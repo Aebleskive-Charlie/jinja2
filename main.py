@@ -29,9 +29,14 @@ async def index(request):
 @app.post("/add")
 async def add_number(request):
      #TODO: Add to number here 
+     globals["number"]+=1
      return redirect(f"/")
 
 #TODO: Opret en POST funktion der kan trække 1 fra nummeret i jeres dict
+@app.post("/del")
+async def del_number(request):
+    globals["number"]-=1
+    return redirect(f"/")
 
 #TODO: Funktionen til at trække fra skal kaldes i en form fra jeres "index.html"
 
